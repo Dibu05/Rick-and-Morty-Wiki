@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import ReactPaginate from "react-paginate";
 
-const Paginations = ({ pageNumber, info, updatePageNumber }) => {
+const Paginations = ({ pageNumber, info, setPageNumber }) => {
   let pageChange = (data) => {
-    updatePageNumber(data.selected + 1);
+    setPageNumber(data.selected + 1);
   };
 
   const [width, setWidth] = useState(window.innerWidth);

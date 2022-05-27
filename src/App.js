@@ -5,8 +5,36 @@ import Cards from "./components/Cards/Cards";
 import Filters from "./components/Filters/Filters";
 import Paginations from "./components/Paginations/Paginations";
 import Search from "./components/Search/Search";
+import NavBar from "./components/NavBar/NavBar";
+import Episodes from "./Pages/Episodes";
+import Location from "./Pages/Location";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes, 
+} from "react-router-dom";
+
+
+
 
 function App() {
+  return (
+    <Router>
+      <div className="App">
+        <NavBar />
+      </div>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/location" element={<Location/>} />
+        <Route path="/episodes" element={<Episodes/>} />
+      </Routes>
+    </Router>
+  );
+}
+
+
+
+const Home = () => {
   // El numero de pagina por default es 1
   let [fetchedData, updateFetchedData] = useState([]);
   let { info, results } = fetchedData;
@@ -15,7 +43,6 @@ function App() {
   let [status, setStatus] = useState("");
   let [species, setSpecies] = useState("");
   let [gender, setGender] = useState("");
-  
 
   let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}&species=${species}`;
 
@@ -28,9 +55,6 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className="text-center ubuntu my-4">
-        <span className="text-primary">Wiki</span> Rick and Mortis!
-      </h1>
       <Search setSearch={setSearch} setPageNumber={setPageNumber} />
       <div className="container">
         <div className="row">
@@ -56,6 +80,6 @@ function App() {
       />
     </div>
   );
-}
+};
 
 export default App;
