@@ -4,3 +4,7 @@
 .container-fluid{
     background-color: #edfeff;
 }
+.container{
+    background-color: #edfeff;
+    height: 500px;
+}
