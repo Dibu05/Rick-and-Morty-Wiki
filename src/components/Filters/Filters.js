@@ -2,6 +2,7 @@ import React from "react";
 import Gender from "../Category/Gender";
 import Species from "../Category/Species";
 import Status from "../Category/Status";
+import './Filter.css'
 
 const Filters = ({setStatus, setPageNumber, setSpecies, setGender}) => {
   let handleDelete = () =>{
@@ -13,7 +14,7 @@ const Filters = ({setStatus, setPageNumber, setSpecies, setGender}) => {
   }
   
   return (
-    <div className="col-3-md-auto">
+    <div className="hola col-lg-3-auto col-12 mb-3">
       <div className="text-center fw-bold fs-4 mb-3">Filtros</div>
       <div
       onClick={handleDelete}

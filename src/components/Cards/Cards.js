@@ -10,7 +10,7 @@ const Cards = ({ results }) => {
       return (
         <Link
           to={`/${e.id}`}
-         className="col-4 mb-4 position-relative text-decoration-none" key={e.id}>
+         className="col-lg-4 col-md-6 col-12 mb-4 position-relative text-decoration-none" key={e.id}>
           <div className="card bg-dark text-white">
             <img src={e.image} alt={e.name} className="img-fluid" />
             <div className="content">
